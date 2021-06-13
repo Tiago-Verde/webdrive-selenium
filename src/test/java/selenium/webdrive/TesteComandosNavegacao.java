@@ -11,7 +11,9 @@ public class TesteComandosNavegacao {
 	static WebDriver driver;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+
+		navegacao();
 
 	}
 	
@@ -21,7 +23,7 @@ public class TesteComandosNavegacao {
 		
 		driver = new ChromeDriver();
 		
-		driver.get("http://www,facebook.com");
+		driver.get("http://www.facebook.com");
 				
 		// navega até o site 
 		driver.navigate().to("https://www.google.com");
