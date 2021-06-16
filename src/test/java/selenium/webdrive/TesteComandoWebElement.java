@@ -50,10 +50,19 @@ public class TesteComandoWebElement {
 		
 		driver.findElement(By.name("login")).submit();
 		
+		driver.navigate().refresh();
+		
+		
+		
+		
+		
+		}
+		
+		
 		
 		
 
 
 	}
 	
-}
+
