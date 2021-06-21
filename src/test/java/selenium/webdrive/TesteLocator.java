@@ -13,7 +13,7 @@ public class TesteLocator {
 
 	public static void main(String[] args) {
 
-		TestClassName();
+		TestText();
 
 	}
 
@@ -25,13 +25,13 @@ public class TesteLocator {
 
 		driver.get("https://www.facebook.com/");
 
-		// elemento mapeado pelo "id"
+		// elemento mapeado pela identificação de TAG "id"
 		driver.findElement(By.id("email")).sendKeys("vutu.goes@gmail.com");
 
-		// elemento mapeado pelo "name"
+		// elemento mapeado pela identificação de TAG "name"
 		driver.findElement(By.name("pass")).sendKeys("140284");
 
-		// elemento também mapeado pelo "name"
+		// elemento também mapeado pela identificação de TAG "name"
 		driver.findElement(By.name("login")).click();
 
 	}
@@ -44,7 +44,7 @@ public class TesteLocator {
 
 		driver.get("https://jundiai.sp.gov.br/");
 
-		// elemento mapeado pela tag "a" - armazenado em uma list
+		// elemento mapeado pela TAG "a" - armazenado em uma list
 		List<WebElement> links = driver.findElements(By.tagName("a"));
 
 		System.out.println(links.size());
@@ -63,11 +63,26 @@ public class TesteLocator {
 		driver = new ChromeDriver();
 
 		driver.get("https://trivago.com.br/");
-		
-		//elemento mapeado pelo nome da classe		
+
+		// elemento mapeado pelo nome da classe
 		driver.findElement(By.className("siteheader__nav-list-string")).click();
+
+	}
+
+	public static void TestText() {
+		
+		System.setProperty("webdriver.chrome.driver", "C:/Tools/chromeDriver/chromedriver.exe");
+
+		driver = new ChromeDriver();
+
+		driver.get("https://facebook.com/");
 		
 		
+		// elemento mapeado através do texto do link
+		//driver.findElement(By.linkText("Esqueceu a senha?")).click();
+		
+		// elemento mapeado através de parte do texto do link
+		driver.findElement(By.partialLinkText("a senha?")).click();
 
 	}
 
