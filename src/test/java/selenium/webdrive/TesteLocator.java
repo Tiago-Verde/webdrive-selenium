@@ -13,7 +13,7 @@ public class TesteLocator {
 
 	public static void main(String[] args) {
 
-		TestText();
+		TesteCssSelectorId();
 
 	}
 
@@ -70,6 +70,23 @@ public class TesteLocator {
 	}
 
 	public static void TestText() {
+
+		System.setProperty("webdriver.chrome.driver", "C:/Tools/chromeDriver/chromedriver.exe");
+
+		driver = new ChromeDriver();
+
+		driver.get("https://facebook.com/");
+
+		// elemento mapeado através do texto do link
+		// driver.findElement(By.linkText("Esqueceu a senha?")).click();
+
+		// elemento mapeado através de parte do texto do link
+		driver.findElement(By.partialLinkText("a senha?")).click();
+
+	}
+	
+	
+	public static void TesteCssSelectorId() {
 		
 		System.setProperty("webdriver.chrome.driver", "C:/Tools/chromeDriver/chromedriver.exe");
 
@@ -77,13 +94,8 @@ public class TesteLocator {
 
 		driver.get("https://facebook.com/");
 		
+		driver.findElement(By.cssSelector("input#email")).sendKeys("teste@gmail.com");
 		
-		// elemento mapeado através do texto do link
-		//driver.findElement(By.linkText("Esqueceu a senha?")).click();
-		
-		// elemento mapeado através de parte do texto do link
-		driver.findElement(By.partialLinkText("a senha?")).click();
-
 	}
 
 }

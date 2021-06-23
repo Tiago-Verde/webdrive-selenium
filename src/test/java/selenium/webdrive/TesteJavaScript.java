@@ -30,7 +30,7 @@ public class TesteJavaScript {
 
 		js.executeScript("window.scrollBy(0,1100)");
 		
-		WebElement livro = driver.findElement(By.cssSelector("img[class='src__Image-xr9q25-0 lkEXOf']"));  
+		WebElement livro = driver.findElement(By.cssSelector("img.src__Image-xr9q25-0 lkEXOf"));  
 		
 		js.executeScript("arguments[0].click();", livro);
 
