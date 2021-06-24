@@ -29,9 +29,10 @@ public class TesteJavaScript {
 		js.executeScript("document.getElementById('h_search-btn').click();");
 
 		js.executeScript("window.scrollBy(0,1100)");
-		
-		WebElement livro = driver.findElement(By.cssSelector("img.src__Image-xr9q25-0 lkEXOf"));  
-		
+
+		WebElement livro = driver.findElement(By.cssSelector(
+				"img[src='https://images-submarino.b2w.io/produtos/imagens/440165108/440165141_1GG.jpg']"));
+
 		js.executeScript("arguments[0].click();", livro);
 
 	}
